@@ -16,7 +16,7 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
     MR script installs (if it's not installed yet)
     [Trial Xtreme 3] and plays for 25 minutes.
 - _Video Shooting_:
-    ADB script activates camera and shoots video for 25 minutes.
+    Shell script activates camera and shoots video for 25 minutes.
 - _Video Playback_:
     This case is not a script.
     For starting this case you need to set video from ```/mrScripts``` folder (or your own video) and start to play it with this command:
