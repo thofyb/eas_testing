@@ -9,14 +9,14 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
 # Test cases 
 
 - _Intensive typing_:
-    MR script installs (if it's not installed yet) [Notes] application and types a text for 25 minutes.
+    MR script installs (if it's not installed yet) [Notes] application and types a text for 15 minutes.
 - _Flappy bird_:  
-    MR script installs (if it's not installed yet) [Flappy bird] and plays for 25 minutes.
+    MR script installs (if it's not installed yet) [Flappy bird] and plays for 15 minutes.
 - _Trial Xtreme 3_:
     MR script installs (if it's not installed yet)
-    [Trial Xtreme 3] and plays for 25 minutes.
+    [Trial Xtreme 3] and plays for 15 minutes.
 - _Video Shooting_:
-    Shell script activates camera and shoots video for 25 minutes.
+    MR script activates camera app and shoots video for 15 minutes.
 - _Video Playback_:
     This case is not a script.
     For starting this case you need to set video from ```/mrScripts``` folder (or your own video) and start to play it with this command:
