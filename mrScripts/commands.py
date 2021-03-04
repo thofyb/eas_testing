@@ -11,7 +11,7 @@ def cmd_reset(core_i):
 
 
 def cmd_gov_set(core_i, gov):
-    return '~/Android/Sdk/platform-tools/adb shell \"echo' + gov + ' > /sys/devices/system/cpu/cpu' + str(core_i) + '/cpufreq/scaling_governor\"'
+    return '~/Android/Sdk/platform-tools/adb shell \"echo ' + gov + ' > /sys/devices/system/cpu/cpu' + str(core_i) + '/cpufreq/scaling_governor\"'
 
 
 def cmd_battery_stats_reset():
