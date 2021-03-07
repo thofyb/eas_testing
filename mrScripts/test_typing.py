@@ -23,7 +23,6 @@ test_count = int(sys.argv[1])
 for test_i in range(test_count):
 
     MonkeyRunner.sleep(4)
-
     os.system(cmd_reset(0))
     os.system(cmd_reset(7))
     os.system(cmd_battery_stats_reset())
@@ -38,13 +37,12 @@ for test_i in range(test_count):
     while current_sec - start_sec < 900:
         device.type("UTvjfEMLXa")
         current_sec = time.time()
+        os.system(cmd_dump_time(0, test_i))
+        os.system(cmd_dump_time(7, test_i))
+        os.system(cmd_dump_trans(0, test_i))
+        os.system(cmd_dump_trans(7, test_i))
 
-    os.system(cmd_dump_time(0, test_i))
-    os.system(cmd_dump_time(7, test_i))
-    os.system(cmd_dump_trans(0, test_i))
-    os.system(cmd_dump_trans(7, test_i))
-
-    os.system(cmd_battery_stats_dump(package, test_i))
+        os.system(cmd_battery_stats_dump(package, test_i))
 
     device.press('KEYCODE_HOME', MonkeyDevice.DOWN_AND_UP)
     kill_command = 'am force-stop %s' % package
