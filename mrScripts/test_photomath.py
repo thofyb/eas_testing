@@ -4,9 +4,9 @@ import os
 import sys
 from commands import *
 
-curr_governor = sys.argv[2]
-os.system(cmd_gov_set(0, curr_governor))
-os.system(cmd_gov_set(7, curr_governor))
+#curr_governor = sys.argv[2]
+#os.system(cmd_gov_set(0, curr_governor))
+#os.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
@@ -16,6 +16,8 @@ package = "com.microblink.photomath"
 
 activity = "com.microblink.photomath.main.activity.LauncherActivity"
 
+w = int(device.getProperty("display.width"))
+h = int(device.getProperty("display.height"))
 
 runComponent = package + "/" + activity
 
@@ -36,154 +38,154 @@ for test_i in range(test_count):
     start_sec = time.time()
     current_sec = time.time()
 
-    device.touch(215, 2105, "DOWN_AND_UP")
+    device.touch(w/5, h/1.08, "DOWN_AND_UP")
     MonkeyRunner.sleep(1)
 
     while current_sec - start_sec < 60:
         # tools
-        device.touch(85, 1500, "DOWN_AND_UP")
+        device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
 
-        device.touch(100, 1870, MonkeyDevice.DOWN)
+        device.touch(w/10.8, h/1.21, MonkeyDevice.DOWN)
         MonkeyRunner.sleep(0.5)
-        device.touch(250, 1885, MonkeyDevice.MOVE)
+        device.touch(w/4.32, h/1.21, MonkeyDevice.MOVE)
         MonkeyRunner.sleep(0.3)
-        device.touch(250, 1885, MonkeyDevice.UP)
+        device.touch(w/4.32, h/1.21, MonkeyDevice.UP)
         MonkeyRunner.sleep(0.5)
 
         # ()/()
-        device.touch(100, 1875, "DOWN_AND_UP")
+        device.touch(w/10.8, h/1.208, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # pi
-        device.touch(100, 2240, "DOWN_AND_UP")
+        device.touch(w/10.8, h/1.011, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # 6
-        device.touch(805, 1875, "DOWN_AND_UP")
+        device.touch(w/1.342, h/1.208, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ()/()
-        device.touch(100, 1875, "DOWN_AND_UP")
+        device.touch(w/10.8, h/1.208, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # pi
-        device.touch(100, 2240, "DOWN_AND_UP")
+        device.touch(w/10.8, h/1.011, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # 3
-        device.touch(805, 2050, "DOWN_AND_UP")
+        device.touch(w/1.342, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # 2
-        device.touch(625, 2050, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # tools
-        device.touch(85, 1500, "DOWN_AND_UP")
+        device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.5)
 
         # sec
-        device.touch(810, 2230, "DOWN_AND_UP")
+        device.touch(w/1.33, h/1.0157, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # x
-        device.touch(275, 2050, "DOWN_AND_UP")
+        device.touch(w/3.92727, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # -
-        device.touch(975, 2050, "DOWN_AND_UP")
+        device.touch(w/1.10769, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # 8
-        device.touch(625, 1685, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.34421, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # tools
-        device.touch(85, 1500, "DOWN_AND_UP")
+        device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # csc
-        device.touch(975, 2245, "DOWN_AND_UP")
+        device.touch(w/1.10769, h/1.0157, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # x
-        device.touch(275, 2050, "DOWN_AND_UP")
+        device.touch(w/3.92727, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # tools
-        device.touch(85, 1500, "DOWN_AND_UP")
+        device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.5)
 
         # cot
-        device.touch(975, 2050, "DOWN_AND_UP")
+        device.touch(w/1.10769, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # x
-        device.touch(275, 2050, "DOWN_AND_UP")
+        device.touch(w/3.92727, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # ->
-        device.touch(625, 1500, "DOWN_AND_UP")
+        device.touch(w/1.728, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # x
-        device.touch(275, 2050, "DOWN_AND_UP")
+        device.touch(w/3.92727, h/1.10488, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.3)
 
         # show solution
-        device.touch(525, 1280, "DOWN_AND_UP")
+        device.touch(w/2.05714, h/1.7695, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.5)
 
         # show steps
-        device.touch(530, 1700, "DOWN_AND_UP")
+        device.touch(w/2.03774, h/1.33235, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
 
         # back
-        device.touch(80, 180, "DOWN_AND_UP")
+        device.touch(w/13.5, h/12.24324, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
 
         # back again
-        device.touch(900, 800, "DOWN_AND_UP")
+        device.touch(w/1.2, h/2.83125, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
 
         # delete formula
-        device.touch(985, 340, "DOWN_AND_UP")
+        device.touch(w/1.09645, h/6.66176, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
         current_sec = time.time()
 
