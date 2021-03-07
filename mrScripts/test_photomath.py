@@ -4,9 +4,9 @@ import os
 import sys
 from commands import *
 
-#curr_governor = sys.argv[2]
-#os.system(cmd_gov_set(0, curr_governor))
-#os.system(cmd_gov_set(7, curr_governor))
+curr_governor = sys.argv[2]
+os.system(cmd_gov_set(0, curr_governor))
+Ыos.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
