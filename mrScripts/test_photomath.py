@@ -41,7 +41,7 @@ for test_i in range(test_count):
     device.touch(w/5, h/1.08, "DOWN_AND_UP")
     MonkeyRunner.sleep(1)
 
-    while current_sec - start_sec < 60:
+    while current_sec - start_sec < 900:
         # tools
         device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)

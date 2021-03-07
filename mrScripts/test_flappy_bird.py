@@ -18,6 +18,9 @@ activity = "com.dotgears.flappy.SplashScreen"
 
 runComponent = package + "/" + activity
 
+w = int(device.getProperty("display.width"))
+h = int(device.getProperty("display.height"))
+
 test_count = int(sys.argv[1])
 
 for test_i in range(test_count):
@@ -30,13 +33,13 @@ for test_i in range(test_count):
 
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(5)
-    device.touch(270, 1530, "DOWN_AND_UP")
+    device.touch(w/4, h/1.48039, "DOWN_AND_UP")
 
     start_sec = time.time()
     current_sec = time.time()
 
     while current_sec - start_sec < 900:
-        device.touch(270, 1530, "DOWN_AND_UP")
+        device.touch(w/4, h/1.48039, "DOWN_AND_UP")
         MonkeyRunner.sleep(0.6)
         current_sec = time.time()
 

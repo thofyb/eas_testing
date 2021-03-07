@@ -18,6 +18,9 @@ activity = "com.prime31.UnityPlayerProxyActivity"
 
 runComponent = package + "/" + activity
 
+w = int(device.getProperty("display.width"))
+h = int(device.getProperty("display.height"))
+
 test_count = int(sys.argv[1])
 
 for test_i in range(test_count):
@@ -34,27 +37,27 @@ for test_i in range(test_count):
     current_sec = time.time()
 
     # play button
-    device.touch(2020, 915, "DOWN_AND_UP")
+    device.touch(h/1.12129, w/1.18033, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select location
-    device.touch(800, 520, "DOWN_AND_UP")
+    device.touch(h/2.83125, w/2.07692, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select bike
-    device.touch(2000, 970, "DOWN_AND_UP")
+    device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select level
-    device.touch(1020, 300, "DOWN_AND_UP")
+    device.touch(h/2.22059, w/3.6, "DOWN_AND_UP")
     MonkeyRunner.sleep(1.5)
     # start
-    device.touch(2000, 910, "DOWN_AND_UP")
+    device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
     MonkeyRunner.sleep(5)
     # play
     while current_sec - start_sec < 900:
-        device.touch(2000, 910, MonkeyDevice.DOWN)
+        device.touch(h/1.1325, w/1.18681, MonkeyDevice.DOWN)
         MonkeyRunner.sleep(10)
-        device.touch(2000, 910, MonkeyDevice.UP)
+        device.touch(h/1.1325, w/1.18681, MonkeyDevice.UP)
         # restart
-        device.touch(1530, 910, "DOWN_AND_UP")
+        device.touch(h/1.48039, w/1.18681, "DOWN_AND_UP")
         MonkeyRunner.sleep(3)
         current_sec = time.time()
 

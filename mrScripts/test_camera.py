@@ -32,13 +32,13 @@ for test_i in range(test_count):
     MonkeyRunner.sleep(5)
 
     # 2255 770
-    device.touch(2240, 780, "DOWN_AND_UP")
+    device.touch(h/1.01116, w/1.38462, "DOWN_AND_UP")
     MonkeyRunner.sleep(2)
 
     # 2190 540
-    device.touch(2190, 540, "DOWN_AND_UP")
+    device.touch(h/1.03425, w/2, "DOWN_AND_UP")
     MonkeyRunner.sleep(903)
-    device.touch(2190, 540, "DOWN_AND_UP")
+    device.touch(h/1.03425, w/2, "DOWN_AND_UP")
 
     os.system(cmd_dump_time(0, test_i))
     os.system(cmd_dump_time(7, test_i))

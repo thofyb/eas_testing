@@ -18,6 +18,9 @@ activity = "com.ogden.memo.ui.MemoMain"
 
 runComponent = package + "/" + activity
 
+w = int(device.getProperty("display.width"))
+h = int(device.getProperty("display.height"))
+
 test_count = int(sys.argv[1])
 
 for test_i in range(test_count):
@@ -30,7 +33,7 @@ for test_i in range(test_count):
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(3)
 
-    device.touch(1000, 170, "DOWN_AND_UP")
+    device.touch(w/1.08, h/13.32353, "DOWN_AND_UP")
 
     start_sec = time.time()
     current_sec = time.time()
