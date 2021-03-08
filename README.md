@@ -16,13 +16,14 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
     MR script installs (if it's not installed yet)
     [Trial Xtreme 3] and plays for 15 minutes.
 - _Video Shooting_:
-    MR script activates camera app and shoots video for 15 minutes.
+    MR script installes [Open Camera] (if it's not installed yet) 
+    app and shoots video for 15 minutes.
 - _Video Playback_:
-    This case is not a script.
-    For starting this case you need to set video from ```/mrScripts``` folder (or your own video) and start to play it with this command:
-    ```
-    adb shell am start -a android.intent.action.VIEW -t video/mp4 -d <URI>
-    ```
+    MR script plays video on your smartphone. 
+    Attention: download a 15-minute long video to your phone and change folder in script if needed!
+    Also you have to choose a video player if first script usage.
+- _Photomath_:
+    MR script installs [Photomath] app (if it's not installed yet) and solves integral for 15 minutes.
 
 
 
@@ -36,3 +37,7 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
 [Flappy bird]: <https://en.wikipedia.org/wiki/Flappy_Bird>
 
 [Trial Xtreme 3]: <https://www.youtube.com/watch?v=iGu1R090pYk&ab_channel=TouchGameplay>
+
+[Photomath]: <https://photomath.app/en/>
+
+[Open Camera]: <https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=ru&gl=US>
