@@ -19,4 +19,12 @@ def cmd_battery_stats_reset():
 
 
 def cmd_battery_stats_dump(package, test_i):
-    return '~/Android/Sdk/platform-tools/adb shell dumpsys batterystats --charged' + package + ' > res/batterystats_' + str(test_i) + '.txt'
+    return '~/Android/Sdk/platform-tools/adb shell dumpsys batterystats --charged ' + package + ' > res/batterystats_' + str(test_i) + '.txt'
+
+
+def cmd_gfxinfo_reset():
+    return '~/Android/Sdk/platform-tools/adb shell dumpsys gfxinfo --reset'
+
+
+def cmd_gfxinfo_dump(package, test_i):
+    return '~/Android/Sdk/platform-tools/adb shell dumpsys gfxinfo ' + package + ' > res/frames_' + str(test_i) + '.txt'

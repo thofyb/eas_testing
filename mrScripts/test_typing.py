@@ -30,6 +30,7 @@ for test_i in range(test_count):
     os.system(cmd_reset(7))
     os.system(cmd_battery_stats_reset())
 
+    os.system(cmd_gfxinfo_reset())
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(3)
 
@@ -37,13 +38,14 @@ for test_i in range(test_count):
 
     start_sec = time.time()
     current_sec = time.time()
-    while current_sec - start_sec < 900:
+    while current_sec - start_sec < 60:
         device.type("UTvjfEMLXa")
         current_sec = time.time()
         os.system(cmd_dump_time(0, test_i))
         os.system(cmd_dump_time(7, test_i))
         os.system(cmd_dump_trans(0, test_i))
         os.system(cmd_dump_trans(7, test_i))
+        os.system(cmd_gfxinfo_dump(package, test_i))
 
         os.system(cmd_battery_stats_dump(package, test_i))
 

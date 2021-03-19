@@ -26,6 +26,7 @@ test_count = int(sys.argv[1])
 for test_i in range(test_count):
 
     MonkeyRunner.sleep(4)
+    os.system(cmd_gfxinfo_reset())
 
     os.system(cmd_reset(0))
     os.system(cmd_reset(7))
@@ -193,6 +194,7 @@ for test_i in range(test_count):
     os.system(cmd_dump_time(7, test_i))
     os.system(cmd_dump_trans(0, test_i))
     os.system(cmd_dump_trans(7, test_i))
+    os.system(cmd_gfxinfo_dump(package, test_i))
 
     os.system(cmd_battery_stats_dump(package, test_i))
 

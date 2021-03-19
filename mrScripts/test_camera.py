@@ -24,6 +24,7 @@ for test_i in range(test_count):
 
     MonkeyRunner.sleep(4)
 
+    os.system(cmd_gfxinfo_reset())
     os.system(cmd_reset(0))
     os.system(cmd_reset(7))
     os.system(cmd_battery_stats_reset())
@@ -31,11 +32,9 @@ for test_i in range(test_count):
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(5)
 
-    # 2255 770
     device.touch(h/1.01116, w/1.38462, "DOWN_AND_UP")
     MonkeyRunner.sleep(2)
 
-    # 2190 540
     device.touch(h/1.03425, w/2, "DOWN_AND_UP")
     MonkeyRunner.sleep(903)
     device.touch(h/1.03425, w/2, "DOWN_AND_UP")
@@ -44,6 +43,7 @@ for test_i in range(test_count):
     os.system(cmd_dump_time(7, test_i))
     os.system(cmd_dump_trans(0, test_i))
     os.system(cmd_dump_trans(7, test_i))
+    os.system(cmd_gfxinfo_dump(package, test_i))
 
     os.system(cmd_battery_stats_dump(package, test_i))
 

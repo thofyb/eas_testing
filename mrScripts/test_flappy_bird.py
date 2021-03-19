@@ -4,9 +4,9 @@ import os
 import sys
 from commands import *
 
-curr_governor = sys.argv[2]
-os.system(cmd_gov_set(0, curr_governor))
-os.system(cmd_gov_set(7, curr_governor))
+#curr_governor = sys.argv[2]
+#os.system(cmd_gov_set(0, curr_governor))
+#os.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
@@ -31,6 +31,8 @@ for test_i in range(test_count):
     os.system(cmd_reset(7))
     os.system(cmd_battery_stats_reset())
 
+    os.system(cmd_gfxinfo_reset())
+
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(5)
     device.touch(w/4, h/1.48039, "DOWN_AND_UP")
@@ -43,6 +45,7 @@ for test_i in range(test_count):
         MonkeyRunner.sleep(0.6)
         current_sec = time.time()
 
+    os.system(cmd_gfxinfo_dump(package, test_i))
     os.system(cmd_dump_time(0, test_i))
     os.system(cmd_dump_time(7, test_i))
     os.system(cmd_dump_trans(0, test_i))
