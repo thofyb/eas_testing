@@ -16,6 +16,10 @@ os.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
+device.installPackage("apk/vlc.apk")
+
+package = "org.videolan.vlc"
+
 test_count = int(sys.argv[1])
 
 for test_i in range(test_count):
@@ -23,14 +27,14 @@ for test_i in range(test_count):
     os.system(cmd_reset(0))
     os.system(cmd_reset(7))
     os.system(cmd_battery_stats_reset())
-    os.system(cmd_video_playing())
     os.system(cmd_gfxinfo_reset())
+    os.system(cmd_video_playing())
 
     MonkeyRunner.sleep(925)
+
     os.system(cmd_dump_time(0, test_i))
     os.system(cmd_dump_time(7, test_i))
     os.system(cmd_dump_trans(0, test_i))
     os.system(cmd_dump_trans(7, test_i))
     os.system(cmd_gfxinfo_dump(package, test_i))
-
     os.system(cmd_battery_stats_dump(package, test_i))
