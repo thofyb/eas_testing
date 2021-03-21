@@ -10,6 +10,10 @@ os.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
+w = int(device.getProperty("display.width"))
+h = int(device.getProperty("display.height"))
+
+
 device.installPackage("apk/Open_Camera_v1.48.1_apkpure.com.apk")
 
 package = "net.sourceforge.opencamera"
@@ -32,7 +36,8 @@ for test_i in range(test_count):
     device.startActivity(component=runComponent)
     MonkeyRunner.sleep(5)
 
-    device.touch(h/1.01116, w/1.38462, "DOWN_AND_UP")
+    if test_i == 0:
+        device.touch(h/1.01116, w/1.38462, "DOWN_AND_UP")
     MonkeyRunner.sleep(2)
 
     device.touch(h/1.03425, w/2, "DOWN_AND_UP")
