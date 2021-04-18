@@ -19,6 +19,10 @@ activity = "com.microblink.photomath.main.activity.LauncherActivity"
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
+test_folder = curr_governor + "/test_photomath"
+
+time_limit = 900
+
 runComponent = package + "/" + activity
 
 test_count = int(sys.argv[1])
@@ -42,7 +46,7 @@ for test_i in range(test_count):
     device.touch(w/5, h/1.08, "DOWN_AND_UP")
     MonkeyRunner.sleep(1)
 
-    while current_sec - start_sec < 900:
+    while current_sec - start_sec < time_limit:
         # tools
         device.touch(w/12.7, h/1.51, "DOWN_AND_UP")
         MonkeyRunner.sleep(1)
@@ -190,14 +194,15 @@ for test_i in range(test_count):
         MonkeyRunner.sleep(1)
         current_sec = time.time()
 
-    os.system(cmd_dump_time(0, test_i))
-    os.system(cmd_dump_time(7, test_i))
-    os.system(cmd_dump_trans(0, test_i))
-    os.system(cmd_dump_trans(7, test_i))
-    os.system(cmd_gfxinfo_dump(package, test_i))
+    os.system(cmd_dump_time(0, test_i, folder_name))
+    os.system(cmd_dump_time(7, test_i, folder_name))
+    os.system(cmd_dump_trans(0, test_i, folder_name))
+    os.system(cmd_dump_trans(7, test_i, folder_name))
+    os.system(cmd_gfxinfo_dump(package, test_i, folder_name))
 
-    os.system(cmd_battery_stats_dump(package, test_i))
+    os.system(cmd_battery_stats_dump(package, test_i, folder_name))
 
     device.press('KEYCODE_HOME', MonkeyDevice.DOWN_AND_UP)
     kill_command = 'am force-stop %s' % package
     device.shell(kill_command)
+

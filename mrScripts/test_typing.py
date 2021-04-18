@@ -21,7 +21,11 @@ runComponent = package + "/" + activity
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
+folder_name = curr_governor + "/test_typing"
+
 test_count = int(sys.argv[1])
+
+time_limit = 900
 
 for test_i in range(test_count):
 
@@ -38,14 +42,14 @@ for test_i in range(test_count):
 
     start_sec = time.time()
     current_sec = time.time()
-    while current_sec - start_sec < 60:
+    while current_sec - start_sec < time_limit:
         device.type("UTvjfEMLXa")
         current_sec = time.time()
-        os.system(cmd_dump_time(0, test_i))
-        os.system(cmd_dump_time(7, test_i))
-        os.system(cmd_dump_trans(0, test_i))
-        os.system(cmd_dump_trans(7, test_i))
-        os.system(cmd_gfxinfo_dump(package, test_i))
+        os.system(cmd_dump_time(0, test_i, folder_name))
+        os.system(cmd_dump_time(7, test_i, folder_name))
+        os.system(cmd_dump_trans(0, test_i, folder_name))
+        os.system(cmd_dump_trans(7, test_i, folder_name))
+        os.system(cmd_gfxinfo_dump(package, test_i, folder_name))
 
         os.system(cmd_battery_stats_dump(package, test_i))
 

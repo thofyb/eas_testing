@@ -13,6 +13,7 @@ device = MonkeyRunner.waitForConnection()
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
+folder_name = curr_governor + "/test_camera"
 
 device.installPackage("apk/Open_Camera_v1.48.1_apkpure.com.apk")
 
@@ -23,6 +24,8 @@ activity = "net.sourceforge.opencamera.MainActivity"
 runComponent = package + "/" + activity
 
 test_count = int(sys.argv[1])
+
+time_limit = 903
 
 for test_i in range(test_count):
 
@@ -41,16 +44,16 @@ for test_i in range(test_count):
     MonkeyRunner.sleep(2)
 
     device.touch(h/1.03425, w/2, "DOWN_AND_UP")
-    MonkeyRunner.sleep(903)
+    MonkeyRunner.sleep(time_limit)
     device.touch(h/1.03425, w/2, "DOWN_AND_UP")
 
-    os.system(cmd_dump_time(0, test_i))
-    os.system(cmd_dump_time(7, test_i))
-    os.system(cmd_dump_trans(0, test_i))
-    os.system(cmd_dump_trans(7, test_i))
-    os.system(cmd_gfxinfo_dump(package, test_i))
+    os.system(cmd_dump_time(0, test_i, folder_name))
+    os.system(cmd_dump_time(7, test_i, folder_name))
+    os.system(cmd_dump_trans(0, test_i, folder_name))
+    os.system(cmd_dump_trans(7, test_i, folder_name))
+    os.system(cmd_gfxinfo_dump(package, test_i, folder_name))
 
-    os.system(cmd_battery_stats_dump(package, test_i))
+    os.system(cmd_battery_stats_dump(package, test_i, folder_name))
 
     device.press('KEYCODE_HOME', MonkeyDevice.DOWN_AND_UP)
     kill_command = 'am force-stop %s' % package

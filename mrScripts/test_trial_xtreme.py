@@ -21,7 +21,11 @@ runComponent = package + "/" + activity
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
+folder_name = curr_governor + "/test_trial_xtreme"
+
 test_count = int(sys.argv[1])
+
+time_limit = 900
 
 for test_i in range(test_count):
 
@@ -53,7 +57,7 @@ for test_i in range(test_count):
     device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
     MonkeyRunner.sleep(5)
     # play
-    while current_sec - start_sec < 900:
+    while current_sec - start_sec < time_limit:
         device.touch(h/1.1325, w/1.18681, MonkeyDevice.DOWN)
         MonkeyRunner.sleep(10)
         device.touch(h/1.1325, w/1.18681, MonkeyDevice.UP)
@@ -62,13 +66,13 @@ for test_i in range(test_count):
         MonkeyRunner.sleep(3)
         current_sec = time.time()
 
-    os.system(cmd_dump_time(0, test_i))
-    os.system(cmd_dump_time(7, test_i))
-    os.system(cmd_dump_trans(0, test_i))
-    os.system(cmd_dump_trans(7, test_i))
-    os.system(cmd_gfxinfo_dump(package, test_i))
+    os.system(cmd_dump_time(0, test_i, folder_name))
+    os.system(cmd_dump_time(7, test_i, folder_name))
+    os.system(cmd_dump_trans(0, test_i, folder_name))
+    os.system(cmd_dump_trans(7, test_i, folder_name))
+    os.system(cmd_gfxinfo_dump(package, test_i, folder_name))
 
-    os.system(cmd_battery_stats_dump(package, test_i))
+    os.system(cmd_battery_stats_dump(package, test_i, folder_name))
 
     device.press('KEYCODE_HOME', MonkeyDevice.DOWN_AND_UP)
     kill_command = 'am force-stop %s' % package
