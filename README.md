@@ -19,11 +19,9 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
     MR script installes [Open Camera] (if it's not installed yet) 
     app and shoots video for 15 minutes.
 - _Video Playback_:
-    MR script plays video on your smartphone. 
-    Attention: download a 15-minute long video to your phone and change folder in script if needed!
-    Also you have to choose a video player if first script usage.
-- _Photomath_:
-    MR script installs [Photomath] app (if it's not installed yet) and solves integral for 15 minutes.
+    MR script installs [VlC Player] (if it's not installed yet) and plays video on your smartphone.  
+    ***Attention***: download a 15-minute long video to your phone and change folder in script if needed!
+    Also you have to choose a video player if it's first script usage.
 
 
 
@@ -38,6 +36,6 @@ For running them you need to use [MonkeyRunner (MR)] and [Android Debug Bridge (
 
 [Trial Xtreme 3]: <https://www.youtube.com/watch?v=iGu1R090pYk&ab_channel=TouchGameplay>
 
-[Photomath]: <https://photomath.app/en/>
-
 [Open Camera]: <https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=ru&gl=US>
+
+[VLC Player]: <https://play.google.com/store/apps/details?id=org.videolan.vlc&hl=ru&gl=US>
